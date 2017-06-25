@@ -1,0 +1,239 @@
+1   int main(void){
+2   	configt* config = readconfig();
+3   	if(config == NULL){
+4   		puts("Configuration syntax error");
+5   		return1;
+6   	}
+7   	if(config−>magic != MAGICNUMBER){
+8   		puts("Bad magic number");
+9   		return2;
+10  	}
+11  	initialize(config);
+12  
+13  	char* directive = config−>directives[0];
+14  	if(!strcmp(directive,"crashstring")){
+15  		programbug();
+16  	}
+17  	elseif(!strcmp(directive,"setoption")){
+18  		setoption(config−>directives[1]);
+19  	}
+20  	else{
+21  		default();
+22  	}
+23  
+24  	return0;
+25  }
+
+
+1   int main(void)
+2   {
+3   	intx;
+4   	read(0,&x,sizeof(x));
+5   
+6   	if(x==0x0123ABCD)
+7   		vulnerable();
+8   }
+
+1   int check(char* x, int depth){
+2   	if(depth >= 100){
+3   		return 0;
+4   	}else{
+5   		int count = (*x == 'B') ? 1 : 0;
+6   		count += check(x+1, depth+1);
+7   		return count;
+8   	}
+9   }
+10  
+11  int main(void){
+12  	char x[100];
+13  	read(0, x, 100);
+14  
+15  	if(check(x,0) == 25)
+16  		vulnerable();
+17  }
+
+1   int check(char* x,int depth){
+2   	if(depth >= 100){
+3   		return 0;
+4   	}else{
+5   		int count = (*x == 'B') ? 1 : 0;
+6   		count += check(x+1, depth+1);
+7   		return count;
+8   	}
+9   }
+10  
+11  int main(void){
+12  	charx[100];
+13  	int magic;
+14  	read(0, x, 100);
+15  	read(0, &magic, 4);
+16  
+17  	if(check(x,0)==25)
+18  		if(magic==0x42d614f8)
+19  			vulnerable();
+20  }
+
+1   int main(void){
+2   	int challenge;
+3   	int response;
+4
+5   	challenge = random();
+6
+7   	write(1, &challenge, sizeof(challenge));
+8   	read(0, &response, sizeof(response));
+9   	if(challenge == response)
+10  		abort();
+11
+12  }
+
+1   enum {
+2   	MODE_BUILD = 13980,
+3 		MODE_EXAMINE = 809110,
+4   };
+5
+6   ...
+7
+8   RECV(mode, sizeof(uint32 t)) ;
+9
+10  switch(mode[0]) {
+11  	case MODE_BUILD:
+12  		ret = do_build();
+13  		break;
+14  	case MODE_EXAMINE:
+15  		ret = do_examine();
+16  		break;
+17  	default:
+18  		ret = ERR_INVALID_MODE;
+19  }
+
+1 	typedef enum {
+2 		FIFTEEN_AMP = 0x0000000f,
+3 		TWENTY_AMP = 0x00000014,
+4 	} CIRCUIT_MODELS_T;
+
+1   int8_t get_new_breaker_by_model_id
+			(CIRCUIT_MODELS_T model_id, breaker_t *
+			breaker_space, uint8_t breaker_space_idx) {
+2   	int8_t res = SUCCESS;
+3   	switch(model_id) {
+4   		case FIFTEEN_AMP:
+5   			create_breaker(15, breaker_space, breaker_space_idx);
+6   			break;
+7   		case TWENTY_AMP:
+8   			create breaker(20, breaker_space, breaker_space_idx);
+9   			break;
+10  		default:
+11  			//invalidmodelid
+12  			res=−1;
+13  	}
+14  	return res;
+15  }
+
+1   static void create_breaker
+			(uint8_t amp_rating, breaker_t *
+			breaker_space, uint8_t breaker_space_idx) {
+2   	breaker_space−>id = breaker_space_idx;
+3   	breaker_space−>amp_rating = amp_rating;
+4   	breaker_space−>outlets = list_create_dup();
+5   	if(breakerspace−>outlets == NULL) { _terminate(ERRNO_ALLOC); }
+6   }
+
+1   int static_strcmp(char *a, char *b) {
+2   	for(; *a; a++,b++) {
+3   		if(*a != *b)
+4   			break;
+5   	}
+6
+7   	return *a − *b;
+8   }
+9
+10  int main(void) {
+11  	read(0, user_command, 10);
+12
+13  	if (static_strcmp("first_cmd", user_command) == 0) {
+14  		cmd1();
+15  	}
+16  	else if (static_strcmp("second_cmd", user_command) == 0) {
+17  		cmd2();
+18  	}
+19  	else if (static_strcmp("crash_cmd", user_command) == 0) {
+20  		abort();
+21  	}
+22
+23  	return 0;
+24  }
+
+1   int main(void) {
+2   	char user_command[10];
+3   	int user_hash;
+4
+5   	read(0, user_command, 10);
+6   	read(0, user_hash, sizeof(int));
+7
+8   	if (user_hash != hash(user_command)) {
+9   		puts("Hash mismatch!");
+10  		return 1;
+11  	}
+12
+13  	if (strncmp("CRASH",usercommand,5) == 0) {
+14  		puts("Welcome to compartment 3!");
+15  		if (user_command[5] == '!') {
+16  			path_explosion_function();
+17  			if(user_command[6] == '!') {
+18  				puts("CRASHING");
+19  				abort();
+20  			}
+21  		}
+22  	}
+23
+24  	return 0;
+25  }
+
+1   <?xml version="1.0" standalone="no" ?>
+2   <!DOCTYPE pov SYSTEM "/usr/share/cgc-docs/replay.dtd">
+3   <pov>
+    <cbid>2b03cf01_01</cbid>
+    <replay>
+4       <read>
+            <length>1</length>
+            <assign><var>stdout0</var><slice begin="0" /></assign>
+        </read> 
+        <read><length>7</length></read>
+5       <write><var>stdout0</var></write>
+        <write>
+        	<data>\x00\x00\x00\x00\x00\x00\x00\x9c6\x00\x00\x18\x04\x00\x00\x18\x27\x00\x00</data>
+        </write>
+6       <read>
+            <length>1</length>
+            <assign><var>stdout8</var><slice begin="0" /></assign>
+        </read> 
+        <read><length>7</length></read>
+7       <write><var>stdout8</var></write>
+        <write>
+        	<data>\x00\x00\x00\x00\x00\x00\x00\x9c6\x00\x00\x19\x04\x00\x00\x14\x00\x00\x00</data>
+        </write>
+        <read><length>37</length></read>
+8       <read>
+            <length>1</length>
+            <assign><var>stdout16</var><slice begin="0" /></assign>
+        </read> 
+        <read><length>7</length></read>
+9       <write><var>stdout16</var></write>
+        <write>
+        	<data>\x00\xf8\xff\xff\xec\x00d\x96X\x0c\x00\x06\x08\x00\x00\x10\x00\x00\x00</data>
+        </write>
+        <read><length>37</length></read>
+10      <read>
+            <length>1</length>
+            <assign><var>stdout24</var><slice begin="0" /></assign>
+        </read> 
+        <read><length>7</length></read>
+11      <write><var>stdout24</var></write>
+        <write>
+        	<data>\x00\x00\x00\x00\x00\x00\xfb\x96X\x0c\x00\x02\x08\x00\x00\x18\x27\x00\x00</data>
+        </write>
+    </replay> 
+    </pov>
+
+1 cb−test −−debug −−should_core −−cb ./NRFIN_00017
+            −−xml ./POV_FROM_LISTING.xml −−directory .

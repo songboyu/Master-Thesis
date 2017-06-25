@@ -1,0 +1,31 @@
+T. Avgerinos, A. Rebert, S. K. Cha, and D. Brumley. Enhancingsymbolic execution with veritesting. In Proceedings of the InternationalConference on Software Engineering (ICSE), pages 1083–1094. ACM,2014.
+F. Bellard. QEMU, a fast and portable dynamic translator. In USENIXAnnual Technical Conference, FREENIX Track, pages 41–46, 2005.
+S. Bucur. Improving Scalability of Symbolic Execution for Softwarewith Complex Environment Interfaces. PhD thesis, Ecole Polytechnique ´Fed´ erale de Lausanne, 2015. ´
+C. Cadar, D. Dunbar, and D. R. Engler. KLEE: Unassisted andautomatic generation of high-coverage tests for complex systemsprograms. In Proceedings of the USENIX Symposium on OperatingSystems Design and Implementation (OSDI), 2008.
+C. Cadar, V. Ganesh, P. M. Pawlowski, D. L. Dill, and D. R. Engler.EXE: Automatically generating inputs of death. ACM Transactions onInformation and System Security (TISSEC), 12(2):10, 2008.
+G. Campana. Fuzzgrind: un outil de fuzzing automatique. In Actes du7eme symposium sur la s ` ecurit ´ e des technologies de linformation et ´des communications (SSTIC), 2009.
+D. Caselden, A. Bazhanyuk, M. Payer, L. Szekeres, S. McCamant, andD. Song. Transformation-aware exploit generation using a HI-CFG.Technical report, UCB/EECS-2013-85, 2013.
+S. K. Cha, T. Avgerinos, A. Rebert, and D. Brumley. UnleashingMayhem on binary code. In Proceedings of the IEEE Symposium onSecurity and Privacy, 2012.
+Y. Chen, A. Groce, C. Zhang, W.-K. Wong, X. Fern, E. Eide,and J. Regehr. Taming compiler fuzzers. In Proceedings of theACM SIGPLAN Conference on Programming Language Design andImplementation (PLDI), volume 48. ACM, 2013.
+V. Chipounov, V. Kuznetsov, and G. Candea. S2E: A platform forin-vivo multi-path analysis of software systems. In Proceedings ofthe Sixteenth International Conference on Architectural Support forProgramming Languages and Operating Systems, ASPLOS XVI, pages265–278. ACM, 2011.
+DARPA. Cyber Grand Challenge. http://cybergrandchallenge.com.
+DARPA. Cyber Grand Challenge Challenge Repository. https://github.com/CyberGrandChallenge/samples/tree/master/cqe-challenges.
+J. DeMott. Understanding how fuzzing relates to a vulnerability likeHeartbleed. http://labs.bromium.com/2014/05/14/understanding-how-fuzzing-relates-to-a-vulnerability-like-heartbleed/.
+C. Details. Vulnerability distribution of CVE security vulnerabilitiesby type. http://www.cvedetails.com/vulnerabilities-by-types.php.
+W. Drewry and T. Ormandy. Flayer: Exposing application internals.In Proceedings of the USENIX Workshop on Offensive Technologies(WOOT), 2007.
+D. Engler and D. Dunbar. Under-constrained execution: Makingautomatic code destruction easy and scalable. In Proceedings of theInternational Symposium on Software Testing and Analysis (ISSTA).ACM, 2007.
+V. Ganesh, T. Leek, and M. Rinard. Taint-based directed whiteboxfuzzing. In Proceedings of the International Conference on SoftwareEngineering (ICSE), 2009.
+P. Garg. Fuzzing - mutation vs. generation. http://resources.infosecinstitute.com/fuzzing-mutation-vs-generation/.
+P. Godefroid, N. Klarlund, and K. Sen. DART: Directed automatedrandom testing. In Proceedings of the ACM SIGPLAN Conferenceon Programming Language Design and Implementation (PLDI),volume 40, pages 213–223. ACM, 2005.
+P. Godefroid, M. Y. Levin, and D. Molnar. SAGE: Whitebox fuzzingfor security testing. Communications of the ACM, 55(3):40–44, 2012.
+I. Haller, A. Slowinska, M. Neugschwandtner, and H. Bos. Dowsingfor overflows: A guided fuzzer to find buffer boundary violations. InProceedings of the USENIX Security Symposium, 2013.
+LegitBS. DEFCON Capture the Flag. https://legitbs.net/.
+B. P. Miller, L. Fredriksen, and B. So. An empirical study of the reliabilityof UNIX utilities. Communications of the ACM, 33(12):32–44, 1990.
+N. Nethercote and J. Seward. Valgrind: a framework for heavyweightdynamic binary instrumentation. In Proceedings of the ACM SIGPLANConference on Programming Language Design and Implementation(PLDI), volume 42, pages 89–100. ACM, 2007.
+M. Neugschwandtner, P. Milani Comparetti, I. Haller, and H. Bos. TheBORG: Nanoprobing binaries for buffer overreads. In Proceedings ofthe ACM Conference on Data and Application Security and Privacy(CODASPY). ACM, 2015.
+B. S. Pak. Hybrid fuzz testing: Discovering software bugs via fuzzingand symbolic execution. Master’s thesis, School of Computer Science,Carnegie Mellon University, May 2012.
+D. A. Ramos and D. Engler. Under-constrained symbolic execution:Correctness checking for real code. In Proceedings of the USENIXSecurity Symposium, 2015.
+Secunia. Resources vulnerability review 2015. http://secunia.com/resources/vulnerability-review/introduction/.
+Y. Shoshitaishvili, R. Wang, C. Hauser, C. Kruegel, and G. Vigna.Firmalice - automatic detection of authentication bypass vulnerabilitiesin binary firmware. In Proceedings of the Symposium on Network andDistributed System Security (NDSS), 2015.
+T. Wang, T. Wei, G. Gu, and W. Zou. TaintScope: A checksum-awaredirected fuzzing tool for automatic software vulnerability detection. InProceedings of the IEEE Symposium on Security and Privacy, 2010.
+M. Zalewski. American Fuzzy Lop. http://lcamtuf.coredump.cx/afl/.
